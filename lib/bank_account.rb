@@ -23,7 +23,7 @@ class BankAccount
     @transaction_record.record_withdrawal(date, amount, @balance)
   end
 
-  def print_statement
+  def print_bank_statement
     @statement_printer.print_statement(@transaction_record.history)
   end
 
