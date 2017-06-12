@@ -10,11 +10,13 @@ class BankAccount
   def deposit(amount, date)
     valid_transaction_test(amount, date)
     @balance += amount
+    # @transaction_record.record_deposit(date, amount, @balance)
   end
 
   def withdraw(amount, date)
     valid_transaction_test(amount, date)
     @balance -= amount
+    # @transaction_record.record_withdrawal(date, amount, @balance)
   end
 
   private
