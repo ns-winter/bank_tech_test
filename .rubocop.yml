@@ -1,0 +1,17 @@
+
+Metrics/LineLength:
+
+  Max: 140
+
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/BlockLength:
+
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/AbcSize:
+
+  Exclude:
+    - 'lib/**/*'

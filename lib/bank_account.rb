@@ -39,6 +39,6 @@ class BankAccount
   end
 
   def confirm_valid_amount(amount)
-    raise 'amount provided is not valid' unless amount.is_a? Numeric
+    raise 'amount provided is not valid' unless (amount.is_a? Numeric) && amount.positive?
   end
 end
