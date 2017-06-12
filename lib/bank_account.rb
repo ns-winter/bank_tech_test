@@ -1,22 +1,24 @@
 require 'date'
-# BankAccount class
+require_relative 'transaction_record'
+# BankAccount - handles transactions
 class BankAccount
   attr_reader :balance
 
   def initialize
     @balance = 0
+    @transaction_record = TransactionRecord.new
   end
 
   def deposit(amount, date)
     valid_transaction_test(amount, date)
     @balance += amount
-    # @transaction_record.record_deposit(date, amount, @balance)
+    @transaction_record.record_deposit(date, amount, @balance)
   end
 
   def withdraw(amount, date)
     valid_transaction_test(amount, date)
     @balance -= amount
-    # @transaction_record.record_withdrawal(date, amount, @balance)
+    @transaction_record.record_withdrawal(date, amount, @balance)
   end
 
   private
@@ -31,8 +33,6 @@ class BankAccount
   end
 
   def confirm_valid_amount(amount)
-    unless amount.is_a? Numeric
-      raise 'amount provided is not valid'
-    end
+    raise 'amount provided is not valid' unless amount.is_a? Numeric
   end
 end
