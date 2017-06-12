@@ -1,5 +1,6 @@
 require 'date'
 require_relative 'transaction_record'
+require_relative 'statement_printer'
 # BankAccount - handles transactions
 class BankAccount
   attr_reader :balance
@@ -7,6 +8,7 @@ class BankAccount
   def initialize
     @balance = 0
     @transaction_record = TransactionRecord.new
+    @statement_printer = StatementPrinter.new
   end
 
   def deposit(amount, date)
@@ -19,6 +21,10 @@ class BankAccount
     valid_transaction_test(amount, date)
     @balance -= amount
     @transaction_record.record_withdrawal(date, amount, @balance)
+  end
+
+  def print_statement
+    @statement_printer.print_statement(@transaction_record.history)
   end
 
   private
