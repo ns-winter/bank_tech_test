@@ -5,7 +5,7 @@ class TransactionValidator
     confirm_valid_amount(amount)
   end
 
-private
+  private
 
   def confirm_valid_date(date)
     Date.strptime(date, '%d/%m/%Y')

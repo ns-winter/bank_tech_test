@@ -6,6 +6,8 @@ require_relative 'transaction_record'
 require_relative 'transaction_validator'
 # BankAccount - handles transactions
 class Main
+  attr_reader :transaction_record
+
   def initialize
     @bank_account = BankAccount.new
     @transaction_record = TransactionRecord.new
