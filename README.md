@@ -33,5 +33,9 @@ Guard clauses included: Invalid Date or Amount (negative amount or non-numeric a
 
 The BankAccount.rb's third public method *print_bank_statement* is there simply to make the command of outputting the bank statement simpler for the user.
 
-Limitations:
-StatementPrinter currently relies on the user previously inputting their deposits/withdrawals without jumping back and forth in time to print a correctly dated bank statement.
+### Limitations:
+
+The application currently relies on the user previously inputting their deposits/withdrawals without jumping back and forth in time to print a correctly dated bank statement.
+
+The printed statement doesn't currently print out to two decimal places (replicating currency)
+
