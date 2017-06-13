@@ -13,7 +13,7 @@ class StatementPrinter
   end
 
   def reverse_by_chronological_order(entries)
-    entries.sort { |a, b| a[:date] <=> b[:date] }.reverse
+    entries.sort { |a, b| DateTime.parse(a[:date]) <=> DateTime.parse(b[:date]) }.reverse
   end
 
   def print_transactions(entries)
