@@ -7,12 +7,12 @@ class TransactionRecord
   end
 
   def record_deposit(date, amount, balance)
-    @history.push(date: date, credit: amount,
-                  debit: nil, balance: balance)
+    @history.push(date: date, credit: format('%.2f', amount),
+                  debit: nil, balance: format('%.2f', balance))
   end
 
   def record_withdrawal(date, amount, balance)
     @history.push(date: date, credit: nil,
-                  debit: amount, balance: balance)
+                  debit: format('%.2f', amount), balance: format('%.2f', balance))
   end
 end
