@@ -1,3 +1,4 @@
+# confirms details provided are correct
 class TransactionValidator
   def validate(amount, date)
     confirm_valid_date(date)

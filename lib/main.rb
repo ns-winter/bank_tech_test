@@ -6,7 +6,6 @@ require_relative 'transaction_record'
 require_relative 'transaction_validator'
 # BankAccount - handles transactions
 class Main
-
   def initialize
     @bank_account = BankAccount.new
     @transaction_record = TransactionRecord.new
@@ -29,8 +28,4 @@ class Main
   def print_bank_statement
     @statement_printer.print_statement(@transaction_record.history)
   end
-
-  private
-
-
 end
